@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ingresá tu cuenta de Somos Sneakers">
+  <meta name="keywords" content="Sneakers,Mi cuenta, Mi cuenta Somos Sneakers">
+  <script src="https://kit.fontawesome.com/96988b2201.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../bootstrap.css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <title>Mi cuenta</title>
+  <link rel="shortcut icon" href="../assets/LogoSneakers.png">
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link" href="../index.html">Home</a>
+            <a class="nav-link" href="./productos.html">Productos</a>
+            <a class="nav-link" href="./marcas.html">Marcas</a>
+            <a class="nav-link active" aria-current="page" href="./miCuenta.html">Mi cuenta</a>
+            <a class="nav-link" href="./contacto.html">Contacto</a>
+          </div>
+        </div>
+        <div class="user">
+          <label for="User" class="user user--login">Usuario</label>
+          <input type="text" name="User" placeholder="Nombre de usuario">
+          <input type="password" name="User" placeholder="Contraseña">
+          <input type="button" value="Cerrar sesion" class="user--logout">
+        </div>
+      </div>
+    </nav>
+  </header>
+  <form class="marcas__form">
+    <div class="marcas__form--inputs">
+      <div class="form-group">
+        <!-- Full Name -->
+        <label for="full_name_id" class="control-label">Nombre y apellido</label>
+        <input type="text" class="form-control" id="full_name_id" name="full_name" placeholder="Juan Pérez">
+      </div>
+
+      <div class="form-group">
+        <!-- Street -->
+        <label for="street1_id" class="control-label">Dirección 1</label>
+        <input type="text" class="form-control" id="street1_id" name="street1" placeholder="Avenida Corrientes 1202">
+      </div>
+
+      <div class="form-group">
+        <!-- Apartament -->
+        <label for="street2_id" class="control-label">Departamento</label>
+        <input type="text" class="form-control" id="street2_id" name="street2" placeholder="PB">
+      </div>
+    </div>
+
+    <div class="marcas__form--inputs">
+      <div class="form-group">
+        <!-- Full Name -->
+        <label for="full_name_id" class="control-label">Nombre de usuario</label>
+        <input type="text" class="form-control" id="full_name_id" name="full_name" placeholder="Juan_Pérez" required>
+      </div>
+
+      <div class="form-group">
+        <!-- Email -->
+        <label for="email" class="control-label">Email</label>
+        <input type="text" class="form-control" name="email" placeholder="juanperez@hotmail.com" required>
+      </div>
+
+      <div class="form-group">
+        <!-- Apartament -->
+        <label for="password" class="control-label">Contraseña</label>
+        <input type="password" class="form-control" name="password">
+      </div>
+    </div>
+
+    <div class="marcas__form--inputs">
+      <div class="form-group">
+        <!-- Country-->
+        <label for="city_id" class="control-label">País</label>
+        <input type="text" class="form-control" id="city_id" name="city" placeholder="Argentina">
+      </div>
+
+      <div class="form-group">
+        <!-- Province -->
+        <label for="state_id" class="control-label">Provincia</label>
+        <select class="form-control" id="state_id" required>
+          <option>Buenos Aires</option>
+          <option>Catamarca</option>
+          <option>Chaco</option>
+          <option>Chubut</option>
+          <option>Córdoba</option>
+          <option>Corrientes</option>
+          <option>Entre Ríos</option>
+          <option>Formosa</option>
+          <option>Jujuy</option>
+          <option>La Pampa</option>
+          <option>La Rioja</option>
+          <option>Mendoza</option>
+          <option>Misiones</option>
+          <option>Neuquén</option>
+          <option>Río Negro</option>
+          <option>Salta</option>
+          <option>San Juan</option>
+          <option>San Luis</option>
+          <option>Santa Cruz</option>
+          <option>Santa Fe</option>
+          <option>Santiago Del Estero</option>
+          <option>Tierra Del Fuego</option>
+          <option>Tucumán</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="zip_id" class="control-label">Código postal</label>
+        <input type="text" class="form-control" id="zip_id" name="zip" placeholder="#####" required>
+      </div>
+    </div>
+  </form>
+  <footer class="text-center text-lg-start text-white" style="background-color: #929fba">
+    <!-- Grid container -->
+    <div class="container p-4 pb-0">
+      <!-- Section: Links -->
+      <section class="">
+        <!--Grid row-->
+        <div class="row">
+
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">
+              <!-- Grid column -->
+              Acerca de nosotros
+            </h6>
+            <p>
+              Somos una empresa de primera calidad con una gran trayectoria y líder en venta de zapatillas sneakers,
+              tanto de hombres como de mujeres.
+            </p>
+          </div>
+
+
+          <!-- Grid column -->
+          <hr class="w-100 clearfix d-md-none" />
+
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">Contacto</h6>
+            <p><i class="fas fa-home mr-3"></i> Avenida Corrientes 1202</p>
+            <p class="footer__contact--email"><i class="fas fa-envelope mr-3"></i> ferreyra_franco02@outlook.com</p>
+            <p><i class="fas fa-phone mr-3"></i> + 54 11 3634 1658</p>
+          </div>
+          <!-- Grid column -->
+          <hr class="w-100 clearfix d-md-none" />
+
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">Redes</h6>
+
+            <!-- Twitter -->
+            <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee"
+              href="https://twitter.com/franferreyr" role="button"><i class="fab fa-twitter"></i></a>
+            <!-- Instagram -->
+            <a class="btn btn-primary btn-floating m-1" style="background-color: #ac2bac"
+              href="https://www.instagram.com/fran.ferreyr/" role="button"><i class="fab fa-instagram"></i></a>
+
+            <!-- Linkedin -->
+            <a class="btn btn-primary btn-floating m-1" style="background-color: #0082ca"
+              href="https://www.linkedin.com/in/franco-ferreyra-tecdev" role="button"><i
+                class="fab fa-linkedin-in"></i></a>
+            <!-- Github -->
+            <a class="btn btn-primary btn-floating m-1" style="background-color: #333333"
+              href="https://github.com/FrancoJFerreyra" role="button"><i class="fab fa-github"></i></a>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    crossorigin="anonymous"></script>
+  <script src="../bootstrap.js/bootstrap.min.js"></script>
+</body>
+
+</html>

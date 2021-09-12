@@ -1,0 +1,17 @@
+@import "__shortcuts.scss";
+.background {
+  background-image: url(../assets/fondoMarcas.jpg);
+  justify-items: center;
+  @include column;
+  align-items: center;
+  > div {
+    @include column;
+    > article {
+      > img {
+        width: 100%;
+        height: 100%;
+        background-position: center;
+      }
+    }
+  }
+}

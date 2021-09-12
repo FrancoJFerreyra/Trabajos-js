@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Comunicate con nosotros a través del siguiente formulario.">
+  <meta name="keywords" content="Sneakers, Sneakers contacto, Contacto de Somos Sneakers">
+  <script src="https://kit.fontawesome.com/96988b2201.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../bootstrap.css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <title>Contacto</title>
+  <link rel="shortcut icon" href="../assets/LogoSneakers.png">
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link" href="../index.html">Home</a>
+            <a class="nav-link" href="./productos.html">Productos</a>
+            <a class="nav-link" href="./Marcas.html">Marcas</a>
+            <a class="nav-link" href="./miCuenta.html">Mi cuenta</a>
+            <a class="nav-link active" aria-current="page" href="./contacto.html">Contacto</a>
+          </div>
+        </div>
+        <div class="user">
+          <label for="User" class="user user--login">Usuario</label>
+          <input type="text" name="User" placeholder="Nombre de usuario">
+          <input type="password" name="User" placeholder="Contraseña">
+          <input type="button" value="Cerrar sesion" class="user--logout">
+        </div>
+      </div>
+    </nav>
+  </header>
+  <section class="contact__Background">
+    <form class="form__contact">
+      <legend class="form__contact--legend">Envianos tu consulta</legend>
+      <!-- 2 column grid layout with text inputs for the first and last names -->
+      <div class="row mb-4">
+        <div class="col">
+          <div class="form-outline">
+            <label class="form-label" for="form6Example1">Primer Nombre</label>
+            <input type="text" id="form6Example1" class="form-control" />
+          </div>
+        </div>
+        <div class="col">
+          <label class="form-label" for="form6Example2">Segundo Nombre</label>
+          <div class="form-outline">
+            <input type="text" id="form6Example2" class="form-control" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Text input -->
+      <div class="form-outline mb-4">
+        <label class="form-label" for="form6Example4">Dirección</label>
+        <input type="text" id="form6Example4" class="form-control" />
+      </div>
+
+      <!-- Email input -->
+      <div class="form-outline mb-4">
+        <label class="form-label" for="form6Example5">Email</label>
+        <input type="email" id="form6Example5" class="form-control" />
+      </div>
+
+      <!-- Number input -->
+      <div class="form-outline mb-4">
+        <label class="form-label" for="form6Example6">Teléfono</label>
+        <input type="number" id="form6Example6" class="form-control" />
+      </div>
+
+      <!-- Message input -->
+      <div class="form-outline mb-4">
+        <label class="form-label" for="form6Example7">Motivo de contacto</label>
+        <textarea class="form-control" id="form6Example7" rows="4"></textarea>
+      </div>
+
+      <!-- Checkbox -->
+      <div class="form-check d-flex justify-content-center mb-4">
+        <input class="form-check-input me-2" type="checkbox" value="" id="form6Example8" required>
+        <label class="form-check-label" for="form6Example8"> Acepto los términos y condiciones </label>
+      </div>
+
+      <!-- Submit button -->
+      <button type="submit" class="btn btn-primary btn-block mb-4">Enviar</button>
+    </form>
+  </section>
+  <footer class="text-center text-lg-start text-white" style="background-color: #929fba">
+    <!-- Grid container -->
+    <div class="container p-4 pb-0">
+      <!-- Section: Links -->
+      <section class="">
+        <!--Grid row-->
+        <div class="row">
+
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">
+              <!-- Grid column -->
+              Acerca de nosotros
+            </h6>
+            <p>
+              Somos una empresa de primera calidad con una gran trayectoria y líder en venta de zapatillas sneakers,
+              tanto de hombres como de mujeres.
+            </p>
+          </div>
+
+
+          <!-- Grid column -->
+          <hr class="w-100 clearfix d-md-none" />
+
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">Contacto</h6>
+            <p><i class="fas fa-home mr-3"></i> Avenida Corrientes 1202</p>
+            <p class="footer__contact--email"><i class="fas fa-envelope mr-3"></i> ferreyra_franco02@outlook.com</p>
+            <p><i class="fas fa-phone mr-3"></i> + 54 11 3634 1658</p>
+          </div>
+          <!-- Grid column -->
+          <hr class="w-100 clearfix d-md-none" />
+
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">Redes</h6>
+
+            <!-- Twitter -->
+            <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee"
+              href="https://twitter.com/franferreyr" role="button"><i class="fab fa-twitter"></i></a>
+            <!-- Instagram -->
+            <a class="btn btn-primary btn-floating m-1" style="background-color: #ac2bac"
+              href="https://www.instagram.com/fran.ferreyr/" role="button"><i class="fab fa-instagram"></i></a>
+
+            <!-- Linkedin -->
+            <a class="btn btn-primary btn-floating m-1" style="background-color: #0082ca"
+              href="https://www.linkedin.com/in/franco-ferreyra-tecdev" role="button"><i
+                class="fab fa-linkedin-in"></i></a>
+            <!-- Github -->
+            <a class="btn btn-primary btn-floating m-1" style="background-color: #333333"
+              href="https://github.com/FrancoJFerreyra" role="button"><i class="fab fa-github"></i></a>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    crossorigin="anonymous"></script>
+  <script src="../bootstrap.js/bootstrap.min.js"></script>
+</body>
+
+</html>

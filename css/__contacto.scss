@@ -1,0 +1,32 @@
+@import "__shortcuts.scss";
+.form__contact {
+  @include column;
+  align-items: center;
+  background-image: url(../assets/contactBackground1.jpg);
+  background-position: center;
+  background-size: cover;
+  font-size: 1rem;
+  color: rgb(22, 21, 21);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.form__contact--legend {
+  text-align: center;
+}
+.form-check-input:checked {
+  background-color: black;
+  border-color: black;
+}
+.form-check-input:focus {
+  border-color: #000000;
+  outline: 0;
+  box-shadow: none;
+}
+
+.btn-primary {
+  background-color: black;
+  border-color: black;
+}
+.form-label {
+  background-color: rgba($color: #696969, $alpha: 0.7);
+}

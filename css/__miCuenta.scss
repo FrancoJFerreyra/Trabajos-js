@@ -1,0 +1,27 @@
+@import "__shortcuts.scss";
+.marcas__form {
+  @include column;
+  align-items: center;
+  background-image: url(../assets/miCuentaBackground.jpg);
+  background-size: cover;
+  background-position: center;
+  > .marcas__form--inputs {
+    @include column;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    padding: 2.3rem;
+  }
+}
+.form-group {
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgba(white, 0.7);
+}
+.control-label {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 17rem;
+  margin-left: 0.4rem;
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+}
