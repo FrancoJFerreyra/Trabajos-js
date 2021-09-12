@@ -3,36 +3,30 @@ let name =prompt("Ingresa tu nombre:") ;
 let welcomeName = welcome + " " + name;
 console.log(welcomeName);
 
-let prefix = prompt("Prefijo telefonico (no olvide colocar un + delante del numero)");
-let prefixParseint= parseInt(prefix)
-let signSum = "+"
-if (signSum !=="+"){
-    alert ("Olvido colocar el signo +")
-}
-else if (signSum ==="+" && prefixParseint === 54) {
-    alert ("Linea correspondiente a Argentina")
-}
-else if (signSum ==="+" && prefixParseint === 56){
-    alert ("Linea correspondiente a Chile")
-}
-else {
-    alert ("No se realizan envios a su area")
+let discount = parseFloat (prompt("Ingrese el descuento que desea (0.2 a 0.8)"));
+let product = prompt("Ingrese precio del producto");
+
+for (let discount = 0.2; discount <= 0.8; discount++){
+    let result = product * discount;
+    console.log (product + " " + "x" + " " + discount + " " + "=" + " "+ result)
 }
 
-
-let mobileNumber = prompt("Ingresa tu numero de celular");
-console.log (mobileNumber)
-
-let age = prompt("Ingresa tu edad")
-if (age >= 18){
-    alert("Es mayor de edad")
+let user = prompt ("Ingrese su nombre")
+while (user != "ESC"){
+    switch (user){
+        case "franco":
+            alert ("Hola Franco");
+                break;
+        case "tomas":
+            alert ("Hola Tutor");
+                break;
+        case "sol":
+            alert ("Hola Sol");
+                break;
+        default:
+            alert ("Usuario desconocido o erroneo");
+                break;
+    }
+    user = prompt ("Ingrese su nombre")
 }
-else{
-    alert("Es menor de edad")
-}
-
-let day = prompt("Ingresa fecha de hoy")
-const text = "El dia"
-const text2 = "no estamos tomando pedidos."
-let dayTextText2 = text + " " + day + " " + text2
-console.log(dayTextText2)
+console.log (user);
