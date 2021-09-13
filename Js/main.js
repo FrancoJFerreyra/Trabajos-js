@@ -1,32 +1,19 @@
-let welcome = "Buen dia";
-let name =prompt("Ingresa tu nombre:") ;
-let welcomeName = welcome + " " + name;
-console.log(welcomeName);
+const students = (a,b,c) => {return (a + b) / c;}
 
-let discount = parseFloat (prompt("Ingrese el descuento que desea (0.2 a 0.8)"));
-let product = prompt("Ingrese precio del producto");
+let note1  = 6;
+let note2 = 8;
+let numberOfNotes = 2;
 
-for (let discount = 0.2; discount <= 0.8; discount++){
-    let result = product * discount;
-    console.log (product + " " + "x" + " " + discount + " " + "=" + " "+ result)
-}
+let result = students(note1, note2, numberOfNotes);
+ 
+console.log(result);
 
-let user = prompt ("Ingrese su nombre")
-while (user != "ESC"){
-    switch (user){
-        case "franco":
-            alert ("Hola Franco");
-                break;
-        case "tomas":
-            alert ("Hola Tutor");
-                break;
-        case "sol":
-            alert ("Hola Sol");
-                break;
-        default:
-            alert ("Usuario desconocido o erroneo");
-                break;
-    }
-    user = prompt ("Ingrese su nombre")
-}
-console.log (user);
+// Complementario
+const dues = (a,b) => a / b;
+
+let productPrice = prompt( "Ingrese el precio del producto");
+let amountFees = prompt("Ingrese la cantidad de cuotas");
+
+let totalPrice = dues (productPrice, amountFees);
+
+console.log (totalPrice);
