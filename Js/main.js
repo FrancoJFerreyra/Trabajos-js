@@ -1,19 +1,20 @@
-const students = (a,b,c) => {return (a + b) / c;}
+const precioTotal= (a,b,c) => a+b+c;
+const resta= (a,b) => a-b;
+const descuentoEfectivo= x => x * 0.10;
 
-let note1  = 6;
-let note2 = 8;
-let numberOfNotes = 2;
+let arroz= 55;
+let pollo= 400;
+let salsa= 120;
 
-let result = students(note1, note2, numberOfNotes);
- 
-console.log(result);
+let precioTotalEfectivo =(resta(descuentoEfectivo( precioTotal(arroz,pollo,salsa))))
+console.log(precioTotalEfectivo)
 
-// Complementario
-const dues = (a,b) => a / b;
+// // Complementario
+// const dues = (a,b) => a / b;
 
-let productPrice = prompt( "Ingrese el precio del producto");
-let amountFees = prompt("Ingrese la cantidad de cuotas");
+// let productPrice = prompt( "Ingrese el precio del producto");
+// let amountFees = prompt("Ingrese la cantidad de cuotas");
 
-let totalPrice = dues (productPrice, amountFees);
+// let totalPrice = dues (productPrice, amountFees);
 
-console.log (totalPrice);
+// console.log (totalPrice);
