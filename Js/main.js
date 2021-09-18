@@ -1,12 +1,12 @@
-const precioTotal= (a,b,c) => a+b+c;
-const resta= (a,b) => a-b;
-const descuentoEfectivo= x => x * 0.10;
+const precioTotal= (a,b,c) => {return a+b+c};
+const resta= (a,b) => {return a-b};
+const descuentoEfectivo= x => {return x * 0.10};
 
 let arroz= 55;
 let pollo= 400;
 let salsa= 120;
 
-let precioTotalEfectivo =(resta(descuentoEfectivo( precioTotal(arroz,pollo,salsa))))
+let precioTotalEfectivo =resta(precioTotal(arroz,pollo,salsa), descuentoEfectivo( precioTotal(arroz,pollo,salsa)))
 console.log(precioTotalEfectivo)
 
 // // Complementario
