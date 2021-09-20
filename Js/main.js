@@ -14,10 +14,10 @@ const iva= productos.map(producto=>producto.precio * 1.21)
 console.log(iva);
 
 productos.sort((a,b)=>{
-    if(a<b){
+    if(a.precio<b.precio){
     return -1
     }
-    else(a>b)
+    else(a.precio>b.precio)
     {return 1;}
     
     return 0;
