@@ -32,12 +32,16 @@ const zapatillasFila = productos.find(producto=>producto.marca==="FILA");
 const zapatillasPuma = productos.find(producto=>producto.marca==="PUMA");
     
 const precioZapatilla= "El precio de su zapatilla es de";
+const modeloEquivocado= "El modelo especificado no corresponde";
 
     if (filtrarMarca == "nike"){
         let opcionNike= prompt(modelo + " " + nikeAir );
 
             if(opcionNike==="1"){
                 alert(precioZapatilla + " " + "$"+zapatillasNike.precio)
+            }
+            else{
+                alert(modeloEquivocado);
             }
 
     }
@@ -47,6 +51,9 @@ const precioZapatilla= "El precio de su zapatilla es de";
         if(opcionAdidas== "1"){
             alert(precioZapatilla + " " + "$"+zapatillasAdidas.precio)
     }
+    else{
+        alert(modeloEquivocado);
+    }
 
 }
 else if(filtrarMarca == "new balance"){
@@ -55,7 +62,9 @@ else if(filtrarMarca == "new balance"){
         if(opcionNewBalance== "1"){   
             alert(precioZapatilla + " " + "$"+zapatillasNB.precio)
     }
-
+    else{
+        alert(modeloEquivocado);
+    }
 }
 else if(filtrarMarca == "converse"){
     let opcionConverse= prompt(modelo + " " + converse);
@@ -63,7 +72,9 @@ else if(filtrarMarca == "converse"){
         if(opcionConverse=="1"){
             alert(precioZapatilla + " " + "$"+zapatillasConverse.precio)
     }
-
+    else{
+        alert(modeloEquivocado);
+    }
 }
 else if(filtrarMarca == "fila") {
     let opcionFila= prompt(modelo + " " + fila);
@@ -71,7 +82,9 @@ else if(filtrarMarca == "fila") {
         if(opcionFila== "1"){
         alert(precioZapatilla + " " + "$"+zapatillasFila.precio)
     }
-
+    else{
+        alert(modeloEquivocado);
+    }
 }
 else if(filtrarMarca == "puma") {
     let opcionPuma= prompt(modelo + " " + puma);
@@ -79,11 +92,13 @@ else if(filtrarMarca == "puma") {
         if (opcionPuma== "1"){
         alert(precioZapatilla + " " + "$"+zapatillasPuma.precio)
     }
-
+    else{
+        alert(modeloEquivocado);
+    }
 }
 else
     {
-        alert("El modelo o marca especificada no corresponde")
+        alert("El modelo especificada no corresponde")
 }
 
 // const menorPrecio= productos.filter(producto=>producto.precio < 3000)
