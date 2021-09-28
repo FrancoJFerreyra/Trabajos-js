@@ -1,16 +1,15 @@
 let nombre= prompt("Por favor ingrese su nombre");
 alert ("Buen dia" + " " + nombre.toUpperCase());
 
-const listaMarcas= [" Nike "," New Balance ", " Adidas ", " Converse "," Fila ", " Puma " ]
+const listaMarcas= ["1-Nike ","2-New Balance ", "3-Adidas ", "4-Converse ","5-Fila ", "6-Puma " ]
 alert("A continuación verá la lista de marcas:" + " " + listaMarcas.toString())
 
-const productos= [
-    {id: 1, producto: "Air Jordan High 1 Panda", marca: "NIKE", precio: 4400},
-    {id: 2, producto: "New Balance 530 Pink", marca: "NEW BALANCE", precio: 4850},
-    {id: 3, producto: "Adidas Gazelle Unisex", marca:"ADIDAS", precio: 4000},
-    {id: 4, producto: "Converse All Star Blue", marca:"CONVERSE", precio: 2800},
-    {id: 5, producto: "Fila Disruptor", marca: "FILA", precio: 2500},
-    {id: 6, producto: "Classic Puma Pink", marca: "PUMA", precio: 3500}
+const productos= [{id: 1, producto: "Air Jordan High 1 Panda", marca: "NIKE", precio: 4400},
+{id: 2, producto: "New Balance 530 Pink", marca: "NEW BALANCE", precio: 4850},
+{id: 3, producto: "Adidas Gazelle Unisex", marca:"ADIDAS", precio: 4000},
+{id: 4, producto: "Converse All Star Blue", marca:"CONVERSE", precio: 2800},
+{id: 5, producto: "Fila Disruptor", marca: "FILA", precio: 2500},
+{id: 6, producto: "Classic Puma Pink", marca: "PUMA", precio: 3500}
 ];  
 
 let filtrarMarca = prompt("Ingrese la marca de zapatillas");
@@ -31,83 +30,81 @@ const zapatillasConverse = productos.find(producto=>producto.marca==="CONVERSE")
 const zapatillasFila = productos.find(producto=>producto.marca==="FILA");
 const zapatillasPuma = productos.find(producto=>producto.marca==="PUMA");
 
-const precioZapatilla= "El precio de su zapatilla con iva es de";
-const modeloEquivocado= "El modelo especificado no corresponde";
+const precioZapatilla= "El precio de su zapatilla es de";
+const salir="2-Salir"
+const error="Su respuesta no corresponde a ninguna de las opciones";
 
-    if (filtrarMarca == "nike"){
-        let opcionNike= prompt(modelo + " " + nikeAir );
-
-            if(opcionNike==="1"){
-                alert(precioZapatilla + " " + "$"+zapatillasNike.precio * 1.21)
-            }
-            else{
-                alert(modeloEquivocado);
-            }
-
-    }
-    else if(filtrarMarca == "adidas") {
-        let opcionAdidas= prompt(modelo + " " + adidasG);
-
-        if(opcionAdidas== "1"){
-            alert(precioZapatilla + " " + "$"+zapatillasAdidas.precio * 1.21)
-    }
-    else{
-        alert(modeloEquivocado);
-    }
-
+do{
+if (filtrarMarca == "1"){
+    let opcionNike= prompt(modelo + " " + nikeAir+ "\n" + salir  );
+        if(opcionNike==="1"){
+            alert(precioZapatilla + " " + "$"+zapatillasNike.precio)
+        }
+        else if(opcionNike==="2") break;
+    else alert(error);    
 }
-else if(filtrarMarca == "new balance"){
-    let opcionNewBalance= prompt(modelo + " " + NBPink);
+else if(filtrarMarca == "2") {
+    let opcionAdidas= prompt(modelo + " " + adidasG+ "\n" + salir  );
 
-        if(opcionNewBalance== "1"){   
-            alert(precioZapatilla + " " + "$"+zapatillasNB.precio * 1.21)
-    }
-    else{
-        alert(modeloEquivocado);
-    }
+    if(opcionAdidas== "1"){
+        alert(precioZapatilla + " " + "$"+zapatillasAdidas.precio)
+        }
+        else if(opcionAdidas==="2") break;
+    else alert(error);   
 }
-else if(filtrarMarca == "converse"){
-    let opcionConverse= prompt(modelo + " " + converse);
+else if(filtrarMarca == "3"){
+let opcionNewBalance= prompt(modelo + " " + NBPink+ "\n" + salir  );
 
-        if(opcionConverse=="1"){
-            alert(precioZapatilla + " " + "$"+zapatillasConverse.precio * 1.21)
-    }
-    else{
-        alert(modeloEquivocado);
-    }
+    if(opcionNewBalance== "1"){   
+        alert(precioZapatilla + " " + "$"+zapatillasNB.precio)
+        }
+        else if(opcionNewBalance==="2") break;
+    else alert(error);   
 }
-else if(filtrarMarca == "fila") {
-    let opcionFila= prompt(modelo + " " + fila);
+else if(filtrarMarca == "4"){
+let opcionConverse= prompt(modelo + " " + converse+ "\n" + salir  );
 
-        if(opcionFila== "1"){
-        alert(precioZapatilla + " " + "$"+zapatillasFila.precio * 1.21)
-    }
-    else{
-        alert(modeloEquivocado);
-    }
+    if(opcionConverse=="1"){
+        alert(precioZapatilla + " " + "$"+zapatillasConverse.precio)
+        }
+        else if(opcionConverse==="2") break;
+    else alert(error);   
 }
-else if(filtrarMarca == "puma") {
-    let opcionPuma= prompt(modelo + " " + puma);
+else if(filtrarMarca == "5") {
+let opcionFila= prompt(modelo + " " + fila+ "\n" + salir  );
 
-        if (opcionPuma== "1"){
-        alert(precioZapatilla + " " + "$"+zapatillasPuma.precio * 1.21)
-    }
-    else{
-        alert(modeloEquivocado);
-    }
+    if(opcionFila== "1"){
+    alert(precioZapatilla + " " + "$"+zapatillasFila.precio)
+        }
+        else if(opcionFila==="2") break;
+    else alert(error);   
+}
+else if(filtrarMarca == "6") {
+let opcionPuma= prompt(modelo + " " + puma+ "\n" + salir  );
+
+    if (opcionPuma== "1"){
+    alert(precioZapatilla + " " + "$"+zapatillasPuma.precio)
+        }
+        else if(opcionPuma==="2") break;
+    else alert(error);   
 }
 else
-    {
-        alert("La marca especificada no corresponde")
+{
+    alert("El modelo o marca especificada no corresponde")
 }
 
-// productos.sort((a,b)=>{
-//     if(a.precio<b.precio){
-//     return -1
-//     }
-//     else(a.precio>b.precio)
-//     {return 1;}
-    
-//     return 0;
-// })
-// console.log(productos)
+continuarComprando= prompt("Desea continuar comprando?");
+}while (continuarComprando == "si");
+
+
+for(const producto of productos ){
+    let listaProductos = document.createElement("div");
+    listaProductos.innerHTML=
+        `<ul>
+            <li>
+                ID = ${producto.id}, Marca = ${producto.marca}, Modelo = ${producto.producto} Precio = $${producto.precio}
+            </li>
+        </ul>`
+    document.body.appendChild(listaProductos);
+}
+

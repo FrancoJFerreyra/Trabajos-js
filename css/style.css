@@ -243,6 +243,16 @@ h1 {
   font-size: 2rem;
 }
 
+.cart {
+  background-color: #4d4b4b;
+  border-color: #4d4b4b;
+}
+
+.cart:hover {
+  background-color: grey;
+  border-color: grey;
+}
+
 footer {
   background-color: #343a40;
   color: seashell;
@@ -403,7 +413,6 @@ footer > section > form {
     display: flex;
     flex-direction: column;
     align-items: end;
-    margin-bottom: 3.5rem;
   }
   nav > div > img {
     margin-bottom: 7rem;
