@@ -75,6 +75,7 @@ while (filtrarMarca != 7){
     }
 }
 
+boton.onclick = () =>{
 for(const producto of productos ){
     let listaProductos = document.createElement("div");
     listaProductos.innerHTML=
@@ -84,15 +85,6 @@ for(const producto of productos ){
              </li>
          </ul>`
      document.body.appendChild(listaProductos);
- }
-// let boton= document.getElementById("boton");
-// let text= document.createElement("h1");
-// let contador= 0;
-
-// boton.onclick = () =>{
-//     text.innerHTML += `<h1>Hola Coder ${contador} </h1>`;
-//     document.body.appendChild(text);
-//     contador++;
-// }
+ }}
 
 
