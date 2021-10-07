@@ -1,0 +1,14 @@
+@import "__shortcuts.scss";
+#botonCarrito{
+    background-color: grey;
+    border-radius: 0.2rem;
+    padding: 0.2rem;
+    margin-left: 2rem;
+}
+.div__products--cart{
+    @include row;
+    justify-content:center;
+}
+.li__products--cart{
+    text-decoration: none;
+}

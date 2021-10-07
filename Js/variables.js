@@ -24,3 +24,5 @@ const zapatillasPuma = productos.find(producto=>producto.marca==="PUMA");
 const precioZapatilla= "El precio de su zapatilla es de";
 const salir="2-Salir"
 const error="Su respuesta no corresponde a ninguna de las opciones";
+
+let boton = document.getElementById("botonCarrito")

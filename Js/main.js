@@ -77,10 +77,11 @@ while (filtrarMarca != 7){
 
 boton.onclick = () =>{
 for(const producto of productos ){
-    let listaProductos = document.createElement("div");
+    let listaProductos = document.createElement(`div`);
+    listaProductos.classList.add("div__products--cart");
     listaProductos.innerHTML=
-        `<ul>
-            <li>
+        `<ul class="li__products--cart">
+            <li">
                  ID = ${producto.id}, Marca = ${producto.marca}, Modelo = ${producto.producto} Precio = $${producto.precio}
              </li>
          </ul>`
