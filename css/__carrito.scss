@@ -9,6 +9,9 @@
     @include row;
     justify-content:center;
 }
-.li__products--cart{
+.ul__products--cart{
     text-decoration: none;
+    >li{
+        font-size: 1.2rem;
+    }
 }

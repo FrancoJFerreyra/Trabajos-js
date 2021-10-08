@@ -80,12 +80,10 @@ for(const producto of productos ){
     let listaProductos = document.createElement(`div`);
     listaProductos.classList.add("div__products--cart");
     listaProductos.innerHTML=
-        `<ul class="li__products--cart">
-            <li">
+        `<ul class="ul__products--cart">
+            <li>
                  ID = ${producto.id}, Marca = ${producto.marca}, Modelo = ${producto.producto} Precio = $${producto.precio}
              </li>
          </ul>`
      document.body.appendChild(listaProductos);
  }}
-
-
