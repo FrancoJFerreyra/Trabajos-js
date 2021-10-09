@@ -58,6 +58,9 @@
     width: 10rem;
   }
   .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     padding: 0.5rem 0.5rem;
   }
   .card-title {
@@ -137,5 +140,8 @@
   }
   .div__home--img {
     display: none;
+  }
+  .card-body{
+    padding-top: 0rem;
   }
 }
