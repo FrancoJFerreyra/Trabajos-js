@@ -175,12 +175,15 @@ video {
 
 .card__mark--margin {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0rem 2rem;
+  justify-content: space-around;
 }
 .card__mark--margin > div {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  align-items: unset;
 }
 .card__mark--margin > div > article {
   display: flex;
@@ -219,7 +222,7 @@ video {
 .card {
   height: 26rem;
   width: 15rem;
-  margin: 2rem 0rem 2rem 0rem;
+  margin: 4rem 4rem 4rem 4rem;
   transition: 0.2s;
   font-family: "Oswald", sans-serif;
 }
@@ -229,7 +232,7 @@ video {
 }
 
 .card-title {
-  margin: 1rem 0rem 1rem 0rem;
+  margin: 1rem 0rem 4rem 0rem;
 }
 
 .card-img-top {
@@ -416,6 +419,10 @@ footer > section > form {
     align-items: center;
     justify-content: space-evenly;
   }
+  .card__mark--margin > div {
+    display: flex;
+    flex-direction: column;
+  }
 
   .navbar-expand-lg .navbar-collapse {
     font-size: 1.5rem;
@@ -433,7 +440,7 @@ footer > section > form {
   }
 
   .card__mark--margin > div {
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
   }
 

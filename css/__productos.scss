@@ -9,11 +9,13 @@
 }
 .card__mark--margin {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0rem 2rem; justify-content: space-around;
   > div {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    align-items: unset;
     > article {
       display: flex;
       flex-direction: column;
@@ -47,7 +49,7 @@
 .card {
   height: 26rem;
   width: 15rem;
-  margin: 2rem 0rem 2rem 0rem;
+  margin: 4rem 4rem 4rem 4rem;
   transition: 0.2s;
   font-family: "Oswald", sans-serif;
 }
@@ -55,7 +57,7 @@
   transform: scale(1.1, 1.1);
 }
 .card-title {
-  margin: 1rem 0rem 1rem 0rem;
+  margin: 1rem 0rem 4rem 0rem;
 }
 .card-img-top {
   height: 14rem;

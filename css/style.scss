@@ -87,6 +87,10 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
+    >div{
+      display: flex;
+      flex-direction: column;
+    }
   }
   .navbar-expand-lg .navbar-collapse {
     font-size: 1.5rem;
@@ -103,7 +107,7 @@
   }
   .card__mark--margin {
     > div {
-      flex-direction: row;
+      flex-direction: column;
       justify-content: space-around;
     }
   }
