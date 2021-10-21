@@ -1,10 +1,20 @@
 $("#cart").prepend(`<div id="cartWindow"></div>`);
 
-$("#cart").click(()=>{
-    $("#cartWindow").css("background-color", "pink")
-    .slideUp(1500)
-    .slideDown(1500);
-})
+// const URLGET = `http://hp-api.herokuapp.com/api/characters`;
+
+// $("#cart").click(()=>
+//     $.get(URLGET,function(respuesta,estado){
+//     $("#cartWindow").respuesta[0].image
+// }))
+
+const URLGET = `http://hp-api.herokuapp.com/api/characters`;
+$("#cart").click(()=>
+$.get(URLGET,function(respuesta,estado){
+    console.log(respuesta[0])
+    $("#cart").append(
+        `<div><img src="${respuesta[0].image}"</img></div>`
+    )
+}))
 
 const contenedor = document.getElementById('contenedor');
 
