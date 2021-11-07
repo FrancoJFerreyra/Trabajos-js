@@ -1,33 +1,14 @@
 let cart = [];
-$("#cart").prepend(`<div id="cartWindow"></div>`);
+$("#cart").append(`<div id="cartWindow"></div>`);
 let cartWindow = $("#cartWindow");
 
 //Funcion de actualizar, funcion de remover, subir al storage, crear las cards que esten vayan al carrito, en la funcion de actualizar agregar el lenght para que indique el numero de productos.
 
 
-
-
-// // const URLGET = `http://hp-api.herokuapp.com/api/characters`;
-
-// $("#button").prepend(`<span class="badge bg-secondary">${array.length}</span>`)
-
 let showCart = $("#cart").click(()=>{
         $("#cartWindow").show()
     }
     )
-
-// let cartItems=()=>{
-//     createCard()
-// }
-// const URLGET = `http://hp-api.herokuapp.com/api/characters`;
-// $("#cart").click(()=>
-// $.get(URLGET,function(respuesta,estado){
-//     console.log(respuesta[0])
-//     $("#cart").append(
-//         `<div><img src="${respuesta[0].image}"</img></div>`
-//     )
-// }))
-
 
 //INDICADOR DE CANTIDAD DE PRODUCTOS EN EL CARRITO
 
@@ -47,11 +28,11 @@ Object.keys(dataPorMarca).forEach((marca, index) => {
                     productos += `
                     
                         <div class="card">
-                            <img src="${producto.image }" class="card-img-top">
+                            <img src="${producto.image}" class="card-img-top">
                                 <div class="card-body">
                                 <h5 class="card-title">${producto.productName}</h5>
                                 <button id=${producto.id} class="btnBuyItem">Agregar al carrito </button>
-                                <p>$${producto.price}</p>
+                                <p class="priceParagraph">$${producto.price}</p>
                                 
                             </div>
                         </div>
@@ -78,21 +59,56 @@ let cartContent = () =>{
 };
 
 
-
+// EVENTO QUE AL CLICKEAR AGARRA LA CARD Y  FUNCION QUE TRAE LOS DATOS QUE LUEGO PERMITEN CREAR LA CARD
 $(".btnBuyItem").click(function addProductCart(e) {
     const button = e.target;
     const item = button.closest(".card");
-    console.log(item);
+    const itemTitle = item.querySelector(".card-title").textContent;
+    const itemPrice = item.querySelector(".priceParagraph").textContent;
+    const itemImg = item.querySelector(".card-img-top").src;
+        const newItem = {
+            title: itemTitle,
+            price: itemPrice,
+            img: itemImg,
+            quantity: 1
+        }
+    addItem(newItem)
+})
+//ESTA FUNCION AGREGA LAS CARDS EN EL CARRITO PERO NO LAS RENDERIZA
+const addItem = (newItem) => {
+    // const inputQuantity = $(".inputQuantity")
+    // for(let i = 0; i < cart.length; i++){
+    //     if(cart[i].title.trim() === newItem.title.trim()){
+    //         cart[i].quantity++;
+    //         let inputValue = inputQuantity[i].value;
+    //         inputValue ++;
+    //         console.log(cart);
+    //         return null;
+    //     }
+    // }
+    cart.push(newItem)
+    renderCart()
+}
+//ESTA FUNCION RENDERIZA LAS CARDS EN EL CARRITO
+const renderCart = () =>{
+    cart.map(item => { 
+        const divItemCart = $(`<div class="divItemCart"></div>`)
+        const content = `<div class="cardCart">
+    <img src="${item.img}" class="card-img-cart">
+        <div class="card-body-cart">
+        <h5 class="card-title-cart">${item.title}</h5>
+        <p class="priceParagraph">${item.price}</p>
+        <input type="number" min="1" value=${item.quantity} class="inputQuantity">
+        <button class="delete btn btn-danger">X</button>
+    </div>
+</div>`;
+divItemCart.append(content).html();
+cartWindow.append(divItemCart);
+})
+}
 
-        cartWindow.append(`<div class="cardCart">
-        <img src="${data.image}" class="card-img-top">
-            <div class="card-body">
-            <h5 class="card-title">${data.productName}</h5>
-            <p>$${data.price}</p>
-            
-        </div>
-    </div>`).html;
-})    
+
+
     // let addItemCart = () =>  {
     //     console.log(cartWindow)
     // }
