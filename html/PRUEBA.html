@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../bootstrap.css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" id="cart" class="cart btn btn-primary" data-bs-toggle="modal" data-bs-target="#cartWindow">
+        Carrito
+    </button><span id="quantityCart"></span>
+    <!-- Modal -->
+    <div class="modal fade" id="cartWindow" tabindex="-1" aria-hidden="true" aria-labelledby="modalTitle">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle">Mi carrito</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                </div>
+                <div id="modal-body" class="modal-body">
+                    <p>HOLAAA</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btnCancel btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btnAccept btn-primary" data-bs-dismiss="modal">Finalizar compra</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../bootstrap.js/bootstrap.min.js"></script>
+</body>
+</html>

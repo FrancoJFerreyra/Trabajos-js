@@ -1,14 +1,15 @@
 let cart = [];
-$("#cart").append(`<div id="cartWindow"></div>`);
-let cartWindow = $("#cartWindow");
+// $("#cart").append(`<div id="cartWindow"></div>`);
+let modalBody= $("#modal-body");
+console.log(modalBody);
 
 //Funcion de actualizar, funcion de remover, subir al storage, crear las cards que esten vayan al carrito, en la funcion de actualizar agregar el lenght para que indique el numero de productos.
 
 
-let showCart = $("#cart").click(()=>{
-        $("#cartWindow").show()
-    }
-    )
+// let showCart = $("#cart").click(()=>{
+//         $("#cartWindow").show()
+//     }
+//     )
 
 //INDICADOR DE CANTIDAD DE PRODUCTOS EN EL CARRITO
 
@@ -76,16 +77,16 @@ $(".btnBuyItem").click(function addProductCart(e) {
 })
 //ESTA FUNCION AGREGA LAS CARDS EN EL CARRITO PERO NO LAS RENDERIZA
 const addItem = (newItem) => {
-    // const inputQuantity = $(".inputQuantity")
-    // for(let i = 0; i < cart.length; i++){
-    //     if(cart[i].title.trim() === newItem.title.trim()){
-    //         cart[i].quantity++;
-    //         let inputValue = inputQuantity[i].value;
-    //         inputValue ++;
-    //         console.log(cart);
-    //         return null;
-    //     }
-    // }
+    const inputQuantity = $(".inputQuantity")
+    for(let i = 0; i < cart.length; i++){
+        if(cart[i].title.trim() === newItem.title.trim()){
+            cart[i].quantity++;
+            let inputValue = inputQuantity[i].value;
+            inputValue ++;
+            console.log(cart);
+            return null;
+        }
+    }
     cart.push(newItem)
     renderCart()
 }
@@ -103,7 +104,7 @@ const renderCart = () =>{
     </div>
 </div>`;
 divItemCart.append(content).html();
-cartWindow.append(divItemCart);
+modalBody.append(divItemCart);
 })
 }
 
