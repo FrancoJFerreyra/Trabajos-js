@@ -1,20 +1,8 @@
 let cart = [];
-// $("#cart").append(`<div id="cartWindow"></div>`);
-let modalBody= $("#modal-body");
-console.log(modalBody);
+let modalBody = document.querySelector(".modal-body");
+
 
 //Funcion de actualizar, funcion de remover, subir al storage, crear las cards que esten vayan al carrito, en la funcion de actualizar agregar el lenght para que indique el numero de productos.
-
-
-// let showCart = $("#cart").click(()=>{
-//         $("#cartWindow").show()
-//     }
-//     )
-
-//INDICADOR DE CANTIDAD DE PRODUCTOS EN EL CARRITO
-
-let itemsCart = $("quantityCart");
-itemsCart+= $(`${cart.lenght}`).html();
 
 //FUNCION CREAR CARDS
 
@@ -28,7 +16,7 @@ Object.keys(dataPorMarca).forEach((marca, index) => {
                 ${dataPorMarca[marca].reduce((productos, producto) => {
                     productos += `
                     
-                        <div class="card">
+                        <div class="card" id="card">
                             <img src="${producto.image}" class="card-img-top">
                                 <div class="card-body">
                                 <h5 class="card-title">${producto.productName}</h5>
@@ -37,7 +25,6 @@ Object.keys(dataPorMarca).forEach((marca, index) => {
                                 
                             </div>
                         </div>
-                    
                     `;
                     return productos;
                 }, '')}
@@ -46,18 +33,18 @@ Object.keys(dataPorMarca).forEach((marca, index) => {
     `
 });
 
-console.log(dataPorMarca["ADIDAS"][0])
+// console.log(dataPorMarca["ADIDAS"][0])
 
-let cartContent = () =>{
-    cart = localStorage.getItem("cart");
-    if (!cart){
-        alert(`No hay objetos en el carrito`);
-    }
-    else{
-        cart = JSON.parse(cart);
-        showCart;
-    };
-};
+// let cartContent = () =>{
+//     cart = localStorage.getItem("cart");
+//     if (!cart){
+//         alert(`No hay objetos en el carrito`);
+//     }
+//     else{
+//         cart = JSON.parse(cart);
+//         showCart;
+//     };
+// };
 
 
 // EVENTO QUE AL CLICKEAR AGARRA LA CARD Y  FUNCION QUE TRAE LOS DATOS QUE LUEGO PERMITEN CREAR LA CARD
@@ -67,77 +54,76 @@ $(".btnBuyItem").click(function addProductCart(e) {
     const itemTitle = item.querySelector(".card-title").textContent;
     const itemPrice = item.querySelector(".priceParagraph").textContent;
     const itemImg = item.querySelector(".card-img-top").src;
-        const newItem = {
-            title: itemTitle,
-            price: itemPrice,
-            img: itemImg,
-            quantity: 1
-        }
+    const newItem = {
+        title: itemTitle,
+        price: itemPrice,
+        img: itemImg,
+        quantity: 1
+    }
     addItem(newItem)
 })
+
 //ESTA FUNCION AGREGA LAS CARDS EN EL CARRITO PERO NO LAS RENDERIZA
 const addItem = (newItem) => {
-    const inputQuantity = $(".inputQuantity")
-    for(let i = 0; i < cart.length; i++){
-        if(cart[i].title.trim() === newItem.title.trim()){
+    const inputQuantity = modalBody.getElementsByClassName("inputQuantity")
+    for (let i = 0; i < cart.length; i++) {
+        if (cart[i].title.trim() === newItem.title.trim()) {
             cart[i].quantity++;
-            let inputValue = inputQuantity[i].value;
-            inputValue ++;
-            console.log(cart);
+            let inputValue = inputQuantity[i];
+            inputValue++;
+            totalCart();
             return null;
         }
     }
     cart.push(newItem)
     renderCart()
 }
-//ESTA FUNCION RENDERIZA LAS CARDS EN EL CARRITO
-const renderCart = () =>{
-    cart.map(item => { 
-        const divItemCart = $(`<div class="divItemCart"></div>`)
+
+// //ESTA FUNCION RENDERIZA LAS CARDS EN EL CARRITO
+
+const renderCart = () => {
+    modalBody.innerHTML = "";
+    cart.map(item => {
+        const divItemCart = document.createElement("div")
+        divItemCart.classList.add("divItemCart");
         const content = `<div class="cardCart">
     <img src="${item.img}" class="card-img-cart">
         <div class="card-body-cart">
         <h5 class="card-title-cart">${item.title}</h5>
         <p class="priceParagraph">${item.price}</p>
-        <input type="number" min="1" value=${item.quantity} class="inputQuantity">
+        <p class="inputQuantity">Cantidad: ${item.quantity}</p>
         <button class="delete btn btn-danger">X</button>
     </div>
 </div>`;
-divItemCart.append(content).html();
-modalBody.append(divItemCart);
-})
+
+        divItemCart.innerHTML = content;
+        modalBody.append(divItemCart);
+        divItemCart.querySelector(".delete").addEventListener("click", removeItemCart);
+
+    })
+    totalCart();
+
+}
+
+const totalCart = () => {
+    let total = 0;
+    let itemCartTotal = document.querySelector(".totalToPay");
+    cart.forEach((item) => {
+        const finalPrice = Number(item.price.replace("$", ""));
+        total = total + finalPrice * item.quantity;
+    })
+    itemCartTotal.innerHTML = `Total: $${total}`;
 }
 
 
-
-    // let addItemCart = () =>  {
-    //     console.log(cartWindow)
-    // }
-
-    // addItemCart()
-
-
-
-    
-    // const itemTitle = item.querySelector(".card-title").textContent;
-    // const itemPrice = item.querySelector("p").textContent;
-    // const itemImg = item.querySelector("img").src;
-    // console.log(itemImg);
-
-    // addItemCart(item)
-
-    // function addItemCart(newItem) {
-        
-    //     cart.push(newItem);
-    //     renderCart();
-        
-    // }
-
-    // function renderCart() {
-    //     cartWindow.innerHTML = " ";
-    //     cart.map(item => {
-    //         const divItemsCart = document.createElement("div"); 
-    //         divItemsCart.innerHTML = item;
-    //            cartWindow.append((divItemsCart)) 
-    //         })
-    
+function removeItemCart(e) {
+    const deleteBtn = e.target;
+    const divItemCart = deleteBtn.closest(".divItemCart")
+    const title = divItemCart.querySelector(".card-title");
+    for (let i = 0; i < cart.length; i++)
+        if (cart[i].title.trim() === title) {
+            cart.splice(i, 1)
+        }
+    divItemCart.remove()
+    totalCart();
+}
