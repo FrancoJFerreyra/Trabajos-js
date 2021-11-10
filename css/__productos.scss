@@ -78,7 +78,29 @@ h1 {
   border-color: grey;
 }
 //ElementosCarrito
+.card-cart {
+  display: flex;
+  background-color: rgba(165, 165, 165, 0.808);
+  border-radius: 0.5rem;
+  height: 10.1rem;
+  width: 85%;
+  margin-bottom: 1rem;
+}
 .card-img-cart{
-  width: 8rem;
-  height: 8rem;
+    height: 10rem;
+    width: 10rem;
+    border-radius: 0.5rem;
+}
+.card-body-cart{
+  padding: 1rem;
+}
+.addQuantityItems{
+  display: flex;
+  justify-content: space-between;
+}
+.btnSumSub{
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.5rem;
+  padding: 0;
 }
