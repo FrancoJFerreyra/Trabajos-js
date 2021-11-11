@@ -321,6 +321,9 @@ h1 {
 .cart {
   background-color: #4d4b4b;
   border-color: #4d4b4b;
+  color: white;
+  padding: 0.5rem 0.8rem;
+  border-radius: .4rem;
 }
 
 .cart:hover {
@@ -363,6 +366,33 @@ h1 {
   height: 2.5rem;
   font-size: 1.5rem;
   padding: 0;
+}
+
+.modal-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.btnsFooterModal {
+  background-color: #d76c6c;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+.btnBuyItem {
+  padding: .4rem;
+  background-color: black;
+  color: white;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin-bottom: 0.3rem;
 }
 
 footer {

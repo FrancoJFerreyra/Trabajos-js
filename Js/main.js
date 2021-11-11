@@ -51,6 +51,18 @@ const getProduct = (productId) => {
     return data.find((prod) => prod.id === parseInt(productId));
 }
 
+function addLocalStorage() {
+    localStorage.setItem("cartItem", JSON.stringify(cart))
+}
+
+$( window ).on( "load", function () {
+    const storage = JSON.parse(localStorage.getItem("cart"));
+    if (storage) {
+        cart = storage;
+        renderCartUI()
+    }
+})
+
 const createCartProductHTML = (productId) => {
     const productIdAsNumber = parseInt(productId);
     const producto = getProduct(productIdAsNumber);
@@ -63,7 +75,7 @@ const createCartProductHTML = (productId) => {
                 <p>Cantidad: ${cart[productId]}</p>
                 <div>
                     <button id="btnSum" class="btn btn-secondary btnSumSub">+</button>
-                    <button id="btnSubstract" class="btn btn-danger btnSumSub">-</button>
+                    <button id="btnSubs" class="btn btn-danger btnSumSub">-</button>
                 </div>
             </div>
         </div>
@@ -95,7 +107,7 @@ const renderCartUI = () => {
     const cartHTML = Object.keys(cart).map(createCartProductHTML).join('');
     modalBody.html(cartHTML);
     $('#totalToPay').html(`Total: $${calculateTotalCost()}`);
-    console.log('Cart HTML ', cartHTML);
+    addLocalStorage()
 }
 
 $(".btnBuyItem").click(function (e) {
@@ -103,7 +115,6 @@ $(".btnBuyItem").click(function (e) {
     const productId = parseInt(button.data('productid'));
     addProductToCart(productId);
     renderCartUI();
-    console.log('Added ', productId);
 })
 //click para vaciar carrito
 $("#btnEmpty").click(function (e) {
@@ -111,14 +122,15 @@ $("#btnEmpty").click(function (e) {
     alert('El carrito se ha vaciado');
 });
 
-$("#btnSubstract").click(function (e) {
+$(document).ready(function () {
+$("#btnSubs").click(function (e) {
     const button = $(this);
     const productId = parseInt(button.data('productid'))
+    getProduct()
     removeProductFromCart(productId);
     renderCartUI();
-    console.log("realizado");
+})
 })
 
-$('#btnSum').click(function (e) {
-    addOneItem()
-})
+//Filtrar Productos
+const filter = data.filter(item => item.marca === "ADIDAS")
