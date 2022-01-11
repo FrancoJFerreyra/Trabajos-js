@@ -1,6 +1,6 @@
 let cart = {};
 let modalBody = $(".modal-body");
-const contenedor = $('#contenedor');
+const containerItem = $('#containerItem');
 
 function renderProductsFromData () {
     const productsHTML = Object.keys(dataPorMarca).map((marca, index) => (`
@@ -23,7 +23,7 @@ function renderProductsFromData () {
                 </div>
             </section>`
     )).join('');
-    contenedor.html(productsHTML);
+    containerItem.html(productsHTML);
 }
 renderProductsFromData();
 
@@ -122,15 +122,11 @@ $("#btnEmpty").click(function (e) {
     alert('El carrito se ha vaciado');
 });
 
-$(document).ready(function () {
+ 
 $("#btnSubs").click(function (e) {
     const button = $(this);
-    const productId = parseInt(button.data('productid'))
-    getProduct()
+    const productId = parseInt(button.data('productid'));
+    getProduct();
     removeProductFromCart(productId);
     renderCartUI();
 })
-})
-
-//Filtrar Productos
-const filter = data.filter(item => item.marca === "ADIDAS")
